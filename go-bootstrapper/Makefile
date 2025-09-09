@@ -1,3 +1,3 @@
-.PHONY: run
-run:
-	go run .
+.PHONY: build
+build:
+	go build .
