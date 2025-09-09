@@ -1,0 +1,13 @@
+#!/usr/bin/env sloth-unsafe
+
+let projectName = "go-bootstrapper"
+
+print("Hello, world!")
+
+with($cwd = "./${projectName}") {
+  "make manifest"
+  let result = "go build"!
+  print("GO BUILD: ${ result }")
+  result = "./${projectName} bootstrap"! -> "manifest.json"
+  print("bootstrap and write result: ${ result }")
+}

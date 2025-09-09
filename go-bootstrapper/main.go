@@ -1,7 +1,9 @@
 package main
 
 import (
+	"flag"
 	"fmt"
+	"os"
 	"strings"
 
 	"net/http"
@@ -12,6 +14,25 @@ import (
 const manifest = "https://www.linuxfromscratch.org/lfs/view/development/chapter03/packages.html"
 
 func main() {
+	flag.Parse()
+	var args = flag.Args()
+	if len(args) > 0 {
+		switch args[0] {
+		case "bootstrap":
+			bootstrap()
+			os.Exit(0)
+		default:
+			fmt.Fprintf(os.Stderr, "Unknown sub-command: %s\n", args[0])
+			flag.Usage()
+			os.Exit(1)
+		}
+	} else {
+		flag.Usage()
+		os.Exit(0)
+	}
+}
+
+func bootstrap() {
 	res, err := http.Get(manifest)
 	if err != nil {
 		panic(err)
@@ -24,9 +45,19 @@ func main() {
 		panic("Failed to parse HTML content")
 	}
 	archives := traverse(rootNode)
-	for _, archive := range archives {
-		fmt.Printf("Found: %s\n", archive)
+
+	archiveLength := len(archives)
+	var archive string
+	fmt.Println("[")
+	for i := 0; i < archiveLength; i += 1 {
+		archive = archives[i]
+		if i == archiveLength - 1 {
+			fmt.Printf("  \"%s\"\n", archive)
+		} else {
+			fmt.Printf("  \"%s\",\n", archive)
+		}
 	}
+	fmt.Println("]")
 }
 
 func traverse(node *html.Node) []string {
@@ -60,10 +91,7 @@ func findChildParagraph(node *html.Node) []string {
 					if string_opt == nil {
 						panic("Oops")
 					}
-					fmt.Printf("Found %s\n", *string_opt)
 					urls = append(urls, *string_opt)
-				} else {
-					fmt.Printf("Got text node: \"%s\"\n", data)
 				}
 			}
 		}
@@ -76,15 +104,14 @@ func findChildParagraph(node *html.Node) []string {
 }
 
 func findChildAnchor(node *html.Node) *string {
-	fmt.Printf("Looking for an anchor in %s\n", node.Data)
+	fmt.Fprintf(os.Stderr, "Looking for an anchor in %s\n", node.Data)
 	if node.Type == html.ElementNode && node.Data == "a" {
-		fmt.Println("Find an anchor...")
 		for _, attr := range node.Attr {
 			if attr.Key == "href" {
 				return &attr.Val
 			}
 		}
-		fmt.Println("...but it didn't have an href attribute.")
+		fmt.Fprintf(os.Stderr, "found anchor but it didn't have an href attribute.")
 	} else {
 		var string_opt *string
 		for child := range node.ChildNodes() {
