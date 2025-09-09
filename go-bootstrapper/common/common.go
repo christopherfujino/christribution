@@ -3,6 +3,7 @@ package common
 import (
 	"fmt"
 	"os"
+	"time"
 )
 
 const Ignore = "./ignore"
@@ -20,6 +21,11 @@ func EnsureDir(path string) {
 			panic(err)
 		}
 	}
+}
+
+type Manifest struct {
+	Date time.Time `json:"date"`
+	Archives []Archive `json:"archives"`
 }
 
 type Archive struct {

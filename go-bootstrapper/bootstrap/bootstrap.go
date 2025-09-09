@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 
 	"net/http"
 
@@ -30,7 +31,10 @@ func Bootstrap() {
 	}
 	archives := findDescriptionList(rootNode)
 
-	jsonBytes, err := json.Marshal(archives)
+	jsonBytes, err := json.Marshal(common.Manifest{
+		Date: time.Now(),
+		Archives: archives,
+	})
 	if err != nil {
 		panic(err)
 	}
