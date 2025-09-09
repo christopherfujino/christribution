@@ -9,6 +9,7 @@ const Ignore = "./ignore"
 
 var Archives = fmt.Sprintf("%s/archives", Ignore)
 var Sources = fmt.Sprintf("%s/sources", Ignore)
+
 const ManifestPath = "./manifest.json"
 
 func EnsureDir(path string) {
@@ -22,5 +23,6 @@ func EnsureDir(path string) {
 }
 
 type Archive struct {
-	Remote string
+	Name   string `json:"name"`
+	Remote string `json:"remote"`
 }

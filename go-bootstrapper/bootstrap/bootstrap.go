@@ -76,9 +76,8 @@ func findDescriptionList(node *html.Node) []common.Archive {
 						case parsingRemote:
 							remote_opt = findRemoteUrl(node)
 							if remote_opt != nil {
-								_ = name
 								archives = append(archives, common.Archive{
-									// TODO name
+									Name: name,
 									Remote: *remote_opt,
 								})
 								state = parsingName
@@ -109,6 +108,7 @@ func findArchiveName(node *html.Node) *string {
 							for node := range node.ChildNodes() {
 								if node.Type == html.TextNode {
 									var returnValue = strings.TrimSpace(node.Data)
+									returnValue = strings.TrimSuffix(returnValue, " -")
 									return &returnValue
 								}
 							}
@@ -123,24 +123,6 @@ func findArchiveName(node *html.Node) *string {
 }
 
 func findRemoteUrl(node *html.Node) *string {
-	//for ; node != nil; node = node.NextSibling {
-	//	fmt.Println("Checking for remote url...")
-	//	if node.Type == html.ElementNode && node.Data == "p" {
-	//		var string_opt *string
-	//		for child := range node.ChildNodes() {
-	//			if child.Type == html.TextNode {
-	//				var data = strings.TrimSpace(child.Data)
-	//				if data == "Download:" {
-	//					string_opt = findChildAnchor(node)
-	//					if string_opt == nil {
-	//						panic("Oops")
-	//					}
-	//					return string_opt
-	//				}
-	//			}
-	//		}
-	//	}
-	//}
 	if node.Type == html.ElementNode && node.Data == "p" {
 		var string_opt *string
 		for child := range node.ChildNodes() {
