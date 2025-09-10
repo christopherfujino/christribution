@@ -8,6 +8,8 @@ import (
 	"io"
 	"os"
 	"os/exec"
+	"strings"
+	"sync"
 
 	"github.com/christopherfujino/christribution/go-bootstrapper/common"
 )
@@ -35,7 +37,7 @@ func Fetch() {
 	}
 	var remotes = remotesToFetch(manifest.Archives)
 
-	download(remotes)
+	batchDownload(remotes)
 }
 
 func remotesToFetch(archives []common.Archive) []common.Archive {
@@ -56,73 +58,88 @@ func remotesToFetch(archives []common.Archive) []common.Archive {
 	return outputArchives
 }
 
-func download(archives []common.Archive) {
+func batchDownload(archives []common.Archive) {
+	var wg sync.WaitGroup
+	var archiveChan = make(chan common.Archive, 100)
+	var worker = func(id int, archiveChan <-chan common.Archive, wg *sync.WaitGroup) {
+		defer wg.Done()
+		for archive := range archiveChan {
+			fmt.Printf("[%d] Starting job for %s...\n", id, archive.Remote)
+			downloadAndVerify(archive)
+			fmt.Printf("[%d] Finished job for %s...\n", id, archive.Remote)
+		}
+	}
+
+	for i := 0; i < common.CONCURRENT_WORKERS; i += 1 {
+		wg.Add(1)
+		go worker(i, archiveChan, &wg)
+	}
+
 	for _, archive := range archives {
-		var remotePath = archive.Remote
-		var localPath = archive.LocalPath
-		var isDone = false
+		fmt.Printf("Sending job for %s to worker pool...\n", archive.Remote)
+		archiveChan <- archive
+	}
 
-		defer (func() {
-			if !isDone {
-				fmt.Printf("Removing %s...\n", localPath)
-				err := os.Remove(localPath)
-				if err != nil {
-					fmt.Fprintf(os.Stderr, "%s\n", err)
-				}
-			}
-		})()
+	close(archiveChan)
+	wg.Wait()
+}
 
-		writeFile, err := os.Create(localPath)
-		if err != nil {
-			panic(
-				fmt.Sprintf(
-					"Error creating the local file %s:\n%s",
-					localPath,
-					err.Error(),
-				),
-			)
-		}
-		defer writeFile.Close()
+func downloadAndVerify(archive common.Archive) {
+	var success = download(archive)
+	if success {
+		verify(archive)
+		fmt.Printf("Download of %s successful.\n", archive.LocalPath)
+	}
+}
 
-		{
-			fmt.Printf("GET %s\n", remotePath)
-			cmd := exec.Command("curl", "-L", remotePath, "-o", localPath)
-			cmd.Stdout = os.Stdout
-			cmd.Stderr = os.Stderr
-			err = cmd.Run()
-			if err != nil {
-				_ = os.Remove(localPath)
-				fmt.Fprintf(os.Stderr, "%v\n", err)
-				continue
+func download(archive common.Archive) (isDone bool) {
+	defer (func() {
+		if !isDone {
+			var err = os.Remove(archive.LocalPath)
+			if err == nil {
+				fmt.Printf("Removed %s after failed CURL\n", archive.LocalPath)
 			}
 		}
+	})()
 
-		// check hash
-		{
-			var hash = md5.New()
-			localFile, err := os.Open(archive.LocalPath)
-			if err != nil {
-				panic(err)
-			}
-			_, err = io.Copy(hash, localFile)
-			if err != nil {
-				panic(err)
-			}
-			var hashBytes = hash.Sum(nil)
-			var hashString = hex.EncodeToString(hashBytes)
-			if hashString != archive.Hash {
-				panic(
-					fmt.Sprintf(
-						"Expected %s to have a hash of %s but it actually had %s",
-						archive.Name,
-						archive.Hash,
-						hashString,
-					),
-				)
-			}
-		}
+	fmt.Printf("GET %s\n", archive.Remote)
+	cmd := exec.Command("curl", "-L", archive.Remote, "-o", archive.LocalPath)
+	var buffer = strings.Builder{}
+	cmd.Stdout = &buffer
+	cmd.Stderr = &buffer
+	var err = cmd.Run()
+	if err != nil {
+		_ = os.Remove(archive.LocalPath)
+		fmt.Fprintf(os.Stderr, "  -> [ERROR] %v\n", err)
+		fmt.Fprintf(os.Stderr, "\n%s\n", buffer.String())
+		// No signal that we failed, user will have to re-run the fetch to ensure
+		// there is no remaining work to be done.
+		return
+	}
 
-		isDone = true
-		fmt.Printf("Download of %s successful.\n", localPath)
+	return true
+}
+
+func verify(archive common.Archive) {
+	// check hash
+	var hash = md5.New()
+	localFile, err := os.Open(archive.LocalPath)
+	if err != nil {
+		panic(err)
+	}
+	defer localFile.Close()
+	_, err = io.Copy(hash, localFile)
+	if err != nil {
+		panic(err)
+	}
+	var hashBytes = hash.Sum(nil)
+	var hashString = hex.EncodeToString(hashBytes)
+	if hashString != archive.Hash {
+		panic(fmt.Sprintf(
+			"Expected %s to have a hash of %s but it actually had %s",
+			archive.Name,
+			archive.Hash,
+			hashString,
+		))
 	}
 }

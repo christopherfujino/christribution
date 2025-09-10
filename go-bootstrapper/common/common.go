@@ -14,6 +14,8 @@ var Sources = fmt.Sprintf("%s/sources", Ignore)
 
 const ManifestPath = "./manifest.json"
 
+const CONCURRENT_WORKERS = 1
+
 func EnsureDir(path string) {
 	var _, err = os.Stat(path)
 	if err != nil {

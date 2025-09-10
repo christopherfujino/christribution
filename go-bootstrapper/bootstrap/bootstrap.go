@@ -29,7 +29,9 @@ func Bootstrap() {
 	if err != nil {
 		panic("Failed to parse HTML content")
 	}
-	archives := findDescriptionList(rootNode)
+	archives := findArchives(rootNode)
+
+	archives = rewriteMirrors(archives)
 
 	jsonBytes, err := json.Marshal(common.Manifest{
 		Date:     time.Now(),
@@ -59,7 +61,7 @@ const (
 	parsingRemoteAndHash
 )
 
-func findDescriptionList(node *html.Node) []common.Archive {
+func findArchives(node *html.Node) []common.Archive {
 	var archives []common.Archive
 
 	for node := range node.ChildNodes() {
@@ -112,7 +114,7 @@ func findDescriptionList(node *html.Node) []common.Archive {
 				}
 			}
 		} else {
-			archives = append(archives, findDescriptionList(node)...)
+			archives = append(archives, findArchives(node)...)
 		}
 	}
 	return archives
@@ -208,4 +210,16 @@ func findTextFromCode(node *html.Node) *string {
 	}
 
 	return nil
+}
+
+func rewriteMirrors(archives []common.Archive) (outputArchives []common.Archive) {
+	const ftpGnuPrefix = "https://ftp.gnu.org/gnu"
+	for _, archive := range archives {
+		if strings.HasPrefix(archive.Remote, ftpGnuPrefix) {
+			archive.Remote = strings.Replace(archive.Remote, ftpGnuPrefix, "https://mirrors.kernel.org/gnu", 1)
+		}
+		outputArchives = append(outputArchives, archive)
+	}
+
+	return
 }
