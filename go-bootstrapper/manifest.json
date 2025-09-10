@@ -1,5 +1,5 @@
 {
-  "date": "2025-09-09T18:42:24.525825932-07:00",
+  "date": "2025-09-10T12:23:50.228556578-07:00",
   "archives": [
     {
       "name": "Acl (2.3.2)",
@@ -237,8 +237,8 @@
     },
     {
       "name": "LFS-Bootscripts (20250827)",
-      "remote": "https://www.linuxfromscratch.org/lfs/downloads/development/lfs-bootscripts-20250827.tar.xz",
-      "hash": "3ca0e7b07b6ec0b9138407649bf34d32",
+      "remote": "https://www.linuxfromscratch.org/lfs/downloads/12.4/lfs-bootscripts-20250827.tar.xz",
+      "hash": "3f661c64c2dfb55025767ed56074d059",
       "localPath": "./ignore/archives/lfs-bootscripts-20250827.tar.xz"
     },
     {
@@ -362,12 +362,6 @@
       "localPath": "./ignore/archives/patch-2.8.tar.xz"
     },
     {
-      "name": "Pcre2 (10.45)",
-      "remote": "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2",
-      "hash": "f71abbe1b5adf25cd9af5d26ef223b66",
-      "localPath": "./ignore/archives/pcre2-10.45.tar.bz2"
-    },
-    {
       "name": "Perl (5.42.0)",
       "remote": "https://www.cpan.org/src/5.0/perl-5.42.0.tar.xz",
       "hash": "7a6950a9f12d01eb96a9d2ed2f4e0072",
@@ -426,18 +420,6 @@
       "remote": "https://github.com/shadow-maint/shadow/releases/download/4.18.0/shadow-4.18.0.tar.xz",
       "hash": "30ef46f54363db1d624587be68794ef2",
       "localPath": "./ignore/archives/shadow-4.18.0.tar.xz"
-    },
-    {
-      "name": "Sqlite (3500400)",
-      "remote": "https://sqlite.org/2025/sqlite-autoconf-3500400.tar.gz",
-      "hash": "d74bbdca4ab1b2bd46d3b3f8dbb0f3db",
-      "localPath": "./ignore/archives/sqlite-autoconf-3500400.tar.gz"
-    },
-    {
-      "name": "Sqlite Documentation (3500400)",
-      "remote": "https://anduin.linuxfromscratch.org/LFS/sqlite-doc-3500400.tar.xz",
-      "hash": "63a62af5b35913459954e6e66876f2b8",
-      "localPath": "./ignore/archives/sqlite-doc-3500400.tar.xz"
     },
     {
       "name": "Sysklogd (2.7.2)",

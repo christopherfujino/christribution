@@ -15,7 +15,7 @@ import (
 	"github.com/christopherfujino/christribution/go-bootstrapper/common"
 )
 
-const manifest = "https://www.linuxfromscratch.org/lfs/view/development/chapter03/packages.html"
+const manifest = "https://www.linuxfromscratch.org/lfs/view/stable/chapter03/packages.html"
 
 func Bootstrap() {
 	res, err := http.Get(manifest)
