@@ -1,5 +1,5 @@
 {
-  "date": "2025-09-10T13:59:28.771925883-07:00",
+  "date": "2025-09-10T15:39:21.562680462-07:00",
   "archives": [
     {
       "name": "Acl (2.3.2)",
@@ -522,6 +522,50 @@
       "remote": "https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz",
       "hash": "780fc1896922b1bc52a4e90980cdda48",
       "localPath": "./ignore/archives/zstd-1.5.7.tar.gz"
+    }
+  ],
+  "patches": [
+    {
+      "name": "Bzip2 Documentation Patch",
+      "remote": "https://www.linuxfromscratch.org/patches/lfs/12.4/bzip2-1.0.8-install_docs-1.patch",
+      "hash": "6a5ac7e89b791aae556de0f745916f7f",
+      "localPath": "./ignore/archives/bzip2-1.0.8-install_docs-1.patch"
+    },
+    {
+      "name": "Coreutils Upstream Fix Patch",
+      "remote": "https://www.linuxfromscratch.org/patches/lfs/12.4/coreutils-9.7-upstream_fix-1.patch",
+      "hash": "96382a5aa85d6651a74f94ffb61785d9",
+      "localPath": "./ignore/archives/coreutils-9.7-upstream_fix-1.patch"
+    },
+    {
+      "name": "Coreutils Internationalization Fixes Patch",
+      "remote": "https://www.linuxfromscratch.org/patches/lfs/12.4/coreutils-9.7-i18n-1.patch",
+      "hash": "33ebfad32b2dfb8417c3335c08671206",
+      "localPath": "./ignore/archives/coreutils-9.7-i18n-1.patch"
+    },
+    {
+      "name": "Expect GCC15 Patch",
+      "remote": "https://www.linuxfromscratch.org/patches/lfs/12.4/expect-5.45.4-gcc15-1.patch",
+      "hash": "0ca4d6bb8d572fbcdb13cb36cd34833e",
+      "localPath": "./ignore/archives/expect-5.45.4-gcc15-1.patch"
+    },
+    {
+      "name": "Glibc FHS Patch",
+      "remote": "https://www.linuxfromscratch.org/patches/lfs/12.4/glibc-2.42-fhs-1.patch",
+      "hash": "9a5997c3452909b1769918c759eff8a2",
+      "localPath": "./ignore/archives/glibc-2.42-fhs-1.patch"
+    },
+    {
+      "name": "Kbd Backspace/Delete Fix Patch",
+      "remote": "https://www.linuxfromscratch.org/patches/lfs/12.4/kbd-2.8.0-backspace-1.patch",
+      "hash": "f75cca16a38da6caa7d52151f7136895",
+      "localPath": "./ignore/archives/kbd-2.8.0-backspace-1.patch"
+    },
+    {
+      "name": "SysVinit Consolidated Patch",
+      "remote": "https://www.linuxfromscratch.org/patches/lfs/12.4/sysvinit-3.14-consolidated-1.patch",
+      "hash": "3af8fd8e13cad481eeeaa48be4247445",
+      "localPath": "./ignore/archives/sysvinit-3.14-consolidated-1.patch"
     }
   ]
 }

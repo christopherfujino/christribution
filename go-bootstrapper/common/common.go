@@ -14,7 +14,7 @@ var Sources = fmt.Sprintf("%s/sources", Ignore)
 
 const ManifestPath = "./manifest.json"
 
-const CONCURRENT_WORKERS = 1
+const CONCURRENT_WORKERS = 5
 
 func EnsureDir(path string) {
 	var _, err = os.Stat(path)
@@ -29,6 +29,7 @@ func EnsureDir(path string) {
 type Manifest struct {
 	Date     time.Time `json:"date"`
 	Archives []Archive `json:"archives"`
+	Patches  []Archive `json:"patches"`
 }
 
 func CreateArchive(name string, remote string, hash string) Archive {

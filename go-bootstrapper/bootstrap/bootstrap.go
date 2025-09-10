@@ -17,25 +17,21 @@ import (
 
 const manifest = "https://www.linuxfromscratch.org/lfs/view/stable/chapter03/packages.html"
 
+const patchManifest = "https://www.linuxfromscratch.org/lfs/view/stable/chapter03/patches.html"
+
 func Bootstrap() {
-	res, err := http.Get(manifest)
-	if err != nil {
-		panic(err)
-	}
-	if res.StatusCode != 200 {
-		panic(fmt.Sprintf("Request for %s failed with code %d", manifest, res.StatusCode))
-	}
-	rootNode, err := html.Parse(res.Body)
-	if err != nil {
-		panic("Failed to parse HTML content")
-	}
-	archives := findArchives(rootNode)
+	var archives = findArchives(fetchRemoteNode(manifest))
 
 	archives = rewriteMirrors(archives)
+
+	patches := findArchives(fetchRemoteNode(patchManifest))
+
+	patches = rewriteMirrors(patches)
 
 	jsonBytes, err := json.Marshal(common.Manifest{
 		Date:     time.Now(),
 		Archives: archives,
+		Patches:  patches,
 	})
 	if err != nil {
 		panic(err)
@@ -222,4 +218,19 @@ func rewriteMirrors(archives []common.Archive) (outputArchives []common.Archive)
 	}
 
 	return
+}
+
+func fetchRemoteNode(path string) *html.Node {
+	res, err := http.Get(path)
+	if err != nil {
+		panic(err)
+	}
+	if res.StatusCode != 200 {
+		panic(fmt.Sprintf("Request for %s failed with code %d", manifest, res.StatusCode))
+	}
+	rootNode, err := html.Parse(res.Body)
+	if err != nil {
+		panic("Failed to parse HTML content")
+	}
+	return rootNode
 }
