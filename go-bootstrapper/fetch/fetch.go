@@ -35,9 +35,10 @@ func Fetch() {
 	if err != nil {
 		panic(err)
 	}
-	var remotes = remotesToFetch(manifest.Archives)
 
-	batchDownload(remotes)
+	batchDownload(remotesToFetch(manifest.Archives))
+
+	batchDownload(remotesToFetch(manifest.Patches))
 }
 
 func remotesToFetch(archives []common.Archive) []common.Archive {

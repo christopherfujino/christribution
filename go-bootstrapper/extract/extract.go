@@ -22,9 +22,14 @@ func Extract() {
 		}
 
 		var baseName = entry.Name()
+		if strings.HasSuffix(baseName, ".patch") {
+			continue
+		}
+
 		var fullName = fmt.Sprintf("%s/%s", common.Archives, baseName)
 		// Not all tar archives have an inner directory
 		var sourceNamespace = fmt.Sprintf("%s/%s", common.Sources, baseName)
+
 		common.EnsureDir(sourceNamespace)
 
 		if strings.HasSuffix(baseName, "tar.xz") {
