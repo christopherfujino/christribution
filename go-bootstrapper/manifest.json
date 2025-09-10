@@ -1,455 +1,545 @@
 {
-  "date": "2025-09-09T18:00:05.651984857-07:00",
+  "date": "2025-09-09T18:42:24.525825932-07:00",
   "archives": [
     {
       "name": "Acl (2.3.2)",
       "remote": "https://download.savannah.gnu.org/releases/acl/acl-2.3.2.tar.xz",
-      "hash": "590765dee95907dbc3c856f7255bd669"
+      "hash": "590765dee95907dbc3c856f7255bd669",
+      "localPath": "./ignore/archives/acl-2.3.2.tar.xz"
     },
     {
       "name": "Attr (2.5.2)",
       "remote": "https://download.savannah.gnu.org/releases/attr/attr-2.5.2.tar.gz",
-      "hash": "227043ec2f6ca03c0948df5517f9c927"
+      "hash": "227043ec2f6ca03c0948df5517f9c927",
+      "localPath": "./ignore/archives/attr-2.5.2.tar.gz"
     },
     {
       "name": "Autoconf (2.72)",
       "remote": "https://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.xz",
-      "hash": "1be79f7106ab6767f18391c5e22be701"
+      "hash": "1be79f7106ab6767f18391c5e22be701",
+      "localPath": "./ignore/archives/autoconf-2.72.tar.xz"
     },
     {
       "name": "Automake (1.18.1)",
       "remote": "https://ftp.gnu.org/gnu/automake/automake-1.18.1.tar.xz",
-      "hash": "cea31dbf1120f890cbf2a3032cfb9a68"
+      "hash": "cea31dbf1120f890cbf2a3032cfb9a68",
+      "localPath": "./ignore/archives/automake-1.18.1.tar.xz"
     },
     {
       "name": "Bash (5.3)",
       "remote": "https://ftp.gnu.org/gnu/bash/bash-5.3.tar.gz",
-      "hash": "977c8c0c5ae6309191e7768e28ebc951"
+      "hash": "977c8c0c5ae6309191e7768e28ebc951",
+      "localPath": "./ignore/archives/bash-5.3.tar.gz"
     },
     {
       "name": "Bc (7.0.3)",
       "remote": "https://github.com/gavinhoward/bc/releases/download/7.0.3/bc-7.0.3.tar.xz",
-      "hash": "ad4db5a0eb4fdbb3f6813be4b6b3da74"
+      "hash": "ad4db5a0eb4fdbb3f6813be4b6b3da74",
+      "localPath": "./ignore/archives/bc-7.0.3.tar.xz"
     },
     {
       "name": "Binutils (2.45)",
       "remote": "https://sourceware.org/pub/binutils/releases/binutils-2.45.tar.xz",
-      "hash": "dee5b4267e0305a99a3c9d6131f45759"
+      "hash": "dee5b4267e0305a99a3c9d6131f45759",
+      "localPath": "./ignore/archives/binutils-2.45.tar.xz"
     },
     {
       "name": "Bison (3.8.2)",
       "remote": "https://ftp.gnu.org/gnu/bison/bison-3.8.2.tar.xz",
-      "hash": "c28f119f405a2304ff0a7ccdcc629713"
+      "hash": "c28f119f405a2304ff0a7ccdcc629713",
+      "localPath": "./ignore/archives/bison-3.8.2.tar.xz"
     },
     {
       "name": "Bzip2 (1.0.8)",
       "remote": "https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz",
-      "hash": "67e051268d0c475ea773822f7500d0e5"
+      "hash": "67e051268d0c475ea773822f7500d0e5",
+      "localPath": "./ignore/archives/bzip2-1.0.8.tar.gz"
     },
     {
       "name": "Coreutils (9.7)",
       "remote": "https://ftp.gnu.org/gnu/coreutils/coreutils-9.7.tar.xz",
-      "hash": "6b7285faf7d5eb91592bdd689270d3f1"
+      "hash": "6b7285faf7d5eb91592bdd689270d3f1",
+      "localPath": "./ignore/archives/coreutils-9.7.tar.xz"
     },
     {
       "name": "DejaGNU (1.6.3)",
       "remote": "https://ftp.gnu.org/gnu/dejagnu/dejagnu-1.6.3.tar.gz",
-      "hash": "68c5208c58236eba447d7d6d1326b821"
+      "hash": "68c5208c58236eba447d7d6d1326b821",
+      "localPath": "./ignore/archives/dejagnu-1.6.3.tar.gz"
     },
     {
       "name": "Diffutils (3.12)",
       "remote": "https://ftp.gnu.org/gnu/diffutils/diffutils-3.12.tar.xz",
-      "hash": "d1b18b20868fb561f77861cd90b05de4"
+      "hash": "d1b18b20868fb561f77861cd90b05de4",
+      "localPath": "./ignore/archives/diffutils-3.12.tar.xz"
     },
     {
       "name": "E2fsprogs (1.47.3)",
       "remote": "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.3/e2fsprogs-1.47.3.tar.gz",
-      "hash": "113d7a7ee0710d2a670a44692a35fd2e"
+      "hash": "113d7a7ee0710d2a670a44692a35fd2e",
+      "localPath": "./ignore/archives/e2fsprogs-1.47.3.tar.gz"
     },
     {
       "name": "Elfutils (0.193)",
       "remote": "https://sourceware.org/ftp/elfutils/0.193/elfutils-0.193.tar.bz2",
-      "hash": "ceefa052ded950a4c523688799193a44"
+      "hash": "ceefa052ded950a4c523688799193a44",
+      "localPath": "./ignore/archives/elfutils-0.193.tar.bz2"
     },
     {
       "name": "Expat (2.7.1)",
       "remote": "https://github.com/libexpat/libexpat/releases/download/R_2_7_1/expat-2.7.1.tar.xz",
-      "hash": "9f0c266ff4b9720beae0c6bd53ae4469"
+      "hash": "9f0c266ff4b9720beae0c6bd53ae4469",
+      "localPath": "./ignore/archives/expat-2.7.1.tar.xz"
     },
     {
       "name": "Expect (5.45.4)",
       "remote": "https://prdownloads.sourceforge.net/expect/expect5.45.4.tar.gz",
-      "hash": "00fce8de158422f5ccd2666512329bd2"
+      "hash": "00fce8de158422f5ccd2666512329bd2",
+      "localPath": "./ignore/archives/expect5.45.4.tar.gz"
     },
     {
       "name": "File (5.46)",
       "remote": "https://astron.com/pub/file/file-5.46.tar.gz",
-      "hash": "459da2d4b534801e2e2861611d823864"
+      "hash": "459da2d4b534801e2e2861611d823864",
+      "localPath": "./ignore/archives/file-5.46.tar.gz"
     },
     {
       "name": "Findutils (4.10.0)",
       "remote": "https://ftp.gnu.org/gnu/findutils/findutils-4.10.0.tar.xz",
-      "hash": "870cfd71c07d37ebe56f9f4aaf4ad872"
+      "hash": "870cfd71c07d37ebe56f9f4aaf4ad872",
+      "localPath": "./ignore/archives/findutils-4.10.0.tar.xz"
     },
     {
       "name": "Flex (2.6.4)",
       "remote": "https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz",
-      "hash": "2882e3179748cc9f9c23ec593d6adc8d"
+      "hash": "2882e3179748cc9f9c23ec593d6adc8d",
+      "localPath": "./ignore/archives/flex-2.6.4.tar.gz"
     },
     {
       "name": "Flit-core (3.12.0)",
       "remote": "https://pypi.org/packages/source/f/flit-core/flit_core-3.12.0.tar.gz",
-      "hash": "c538415c1f27bd69cbbbf3cdd5135d39"
+      "hash": "c538415c1f27bd69cbbbf3cdd5135d39",
+      "localPath": "./ignore/archives/flit_core-3.12.0.tar.gz"
     },
     {
       "name": "Gawk (5.3.2)",
       "remote": "https://ftp.gnu.org/gnu/gawk/gawk-5.3.2.tar.xz",
-      "hash": "b7014650c5f45e5d4837c31209dc0037"
+      "hash": "b7014650c5f45e5d4837c31209dc0037",
+      "localPath": "./ignore/archives/gawk-5.3.2.tar.xz"
     },
     {
       "name": "GCC (15.2.0)",
       "remote": "https://ftp.gnu.org/gnu/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz",
-      "hash": "b861b092bf1af683c46a8aa2e689a6fd"
+      "hash": "b861b092bf1af683c46a8aa2e689a6fd",
+      "localPath": "./ignore/archives/gcc-15.2.0.tar.xz"
     },
     {
       "name": "GDBM (1.26)",
       "remote": "https://ftp.gnu.org/gnu/gdbm/gdbm-1.26.tar.gz",
-      "hash": "aaa600665bc89e2febb3c7bd90679115"
+      "hash": "aaa600665bc89e2febb3c7bd90679115",
+      "localPath": "./ignore/archives/gdbm-1.26.tar.gz"
     },
     {
       "name": "Gettext (0.26)",
       "remote": "https://ftp.gnu.org/gnu/gettext/gettext-0.26.tar.xz",
-      "hash": "8e14e926f088e292f5f2bce95b81d10e"
+      "hash": "8e14e926f088e292f5f2bce95b81d10e",
+      "localPath": "./ignore/archives/gettext-0.26.tar.xz"
     },
     {
       "name": "Glibc (2.42)",
       "remote": "https://ftp.gnu.org/gnu/glibc/glibc-2.42.tar.xz",
-      "hash": "23c6f5a27932b435cae94e087cb8b1f5"
+      "hash": "23c6f5a27932b435cae94e087cb8b1f5",
+      "localPath": "./ignore/archives/glibc-2.42.tar.xz"
     },
     {
       "name": "GMP (6.3.0)",
       "remote": "https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz",
-      "hash": "956dc04e864001a9c22429f761f2c283"
+      "hash": "956dc04e864001a9c22429f761f2c283",
+      "localPath": "./ignore/archives/gmp-6.3.0.tar.xz"
     },
     {
       "name": "Gperf (3.3)",
       "remote": "https://ftp.gnu.org/gnu/gperf/gperf-3.3.tar.gz",
-      "hash": "31753b021ea78a21f154bf9eecb8b079"
+      "hash": "31753b021ea78a21f154bf9eecb8b079",
+      "localPath": "./ignore/archives/gperf-3.3.tar.gz"
     },
     {
       "name": "Grep (3.12)",
       "remote": "https://ftp.gnu.org/gnu/grep/grep-3.12.tar.xz",
-      "hash": "5d9301ed9d209c4a88c8d3a6fd08b9ac"
+      "hash": "5d9301ed9d209c4a88c8d3a6fd08b9ac",
+      "localPath": "./ignore/archives/grep-3.12.tar.xz"
     },
     {
       "name": "Groff (1.23.0)",
       "remote": "https://ftp.gnu.org/gnu/groff/groff-1.23.0.tar.gz",
-      "hash": "5e4f40315a22bb8a158748e7d5094c7d"
+      "hash": "5e4f40315a22bb8a158748e7d5094c7d",
+      "localPath": "./ignore/archives/groff-1.23.0.tar.gz"
     },
     {
       "name": "GRUB (2.12)",
       "remote": "https://ftp.gnu.org/gnu/grub/grub-2.12.tar.xz",
-      "hash": "60c564b1bdc39d8e43b3aab4bc0fb140"
+      "hash": "60c564b1bdc39d8e43b3aab4bc0fb140",
+      "localPath": "./ignore/archives/grub-2.12.tar.xz"
     },
     {
       "name": "Gzip (1.14)",
       "remote": "https://ftp.gnu.org/gnu/gzip/gzip-1.14.tar.xz",
-      "hash": "4bf5a10f287501ee8e8ebe00ef62b2c2"
+      "hash": "4bf5a10f287501ee8e8ebe00ef62b2c2",
+      "localPath": "./ignore/archives/gzip-1.14.tar.xz"
     },
     {
       "name": "Iana-Etc (20250807)",
       "remote": "https://github.com/Mic92/iana-etc/releases/download/20250807/iana-etc-20250807.tar.gz",
-      "hash": "de0a909103d4ff59d1424c5ec7ac9e4a"
+      "hash": "de0a909103d4ff59d1424c5ec7ac9e4a",
+      "localPath": "./ignore/archives/iana-etc-20250807.tar.gz"
     },
     {
       "name": "Inetutils (2.6)",
       "remote": "https://ftp.gnu.org/gnu/inetutils/inetutils-2.6.tar.xz",
-      "hash": "401d7d07682a193960bcdecafd03de94"
+      "hash": "401d7d07682a193960bcdecafd03de94",
+      "localPath": "./ignore/archives/inetutils-2.6.tar.xz"
     },
     {
       "name": "Intltool (0.51.0)",
       "remote": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
-      "hash": "12e517cac2b57a0121cda351570f1e63"
+      "hash": "12e517cac2b57a0121cda351570f1e63",
+      "localPath": "./ignore/archives/intltool-0.51.0.tar.gz"
     },
     {
       "name": "IPRoute2 (6.16.0)",
       "remote": "https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.16.0.tar.xz",
-      "hash": "80e1f91bf59d572acc15d5c6eb4f3e7c"
+      "hash": "80e1f91bf59d572acc15d5c6eb4f3e7c",
+      "localPath": "./ignore/archives/iproute2-6.16.0.tar.xz"
     },
     {
       "name": "Jinja2 (3.1.6)",
       "remote": "https://pypi.org/packages/source/J/Jinja2/jinja2-3.1.6.tar.gz",
-      "hash": "66d4c25ff43d1deaf9637ccda523dec8"
+      "hash": "66d4c25ff43d1deaf9637ccda523dec8",
+      "localPath": "./ignore/archives/jinja2-3.1.6.tar.gz"
     },
     {
       "name": "Kbd (2.8.0)",
       "remote": "https://www.kernel.org/pub/linux/utils/kbd/kbd-2.8.0.tar.xz",
-      "hash": "24b5d24f7483726b88f214dc6c77aa41"
+      "hash": "24b5d24f7483726b88f214dc6c77aa41",
+      "localPath": "./ignore/archives/kbd-2.8.0.tar.xz"
     },
     {
       "name": "Kmod (34.2)",
       "remote": "https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-34.2.tar.xz",
-      "hash": "36f2cc483745e81ede3406fa55e1065a"
+      "hash": "36f2cc483745e81ede3406fa55e1065a",
+      "localPath": "./ignore/archives/kmod-34.2.tar.xz"
     },
     {
       "name": "Less (679)",
       "remote": "https://www.greenwoodsoftware.com/less/less-679.tar.gz",
-      "hash": "0386dc14f6a081a94dfb4c2413864eed"
+      "hash": "0386dc14f6a081a94dfb4c2413864eed",
+      "localPath": "./ignore/archives/less-679.tar.gz"
     },
     {
       "name": "LFS-Bootscripts (20250827)",
       "remote": "https://www.linuxfromscratch.org/lfs/downloads/development/lfs-bootscripts-20250827.tar.xz",
-      "hash": "3ca0e7b07b6ec0b9138407649bf34d32"
+      "hash": "3ca0e7b07b6ec0b9138407649bf34d32",
+      "localPath": "./ignore/archives/lfs-bootscripts-20250827.tar.xz"
     },
     {
       "name": "Libcap (2.76)",
       "remote": "https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.76.tar.xz",
-      "hash": "449ade7d620b5c4eeb15a632fbaa4f74"
+      "hash": "449ade7d620b5c4eeb15a632fbaa4f74",
+      "localPath": "./ignore/archives/libcap-2.76.tar.xz"
     },
     {
       "name": "Libffi (3.5.2)",
       "remote": "https://github.com/libffi/libffi/releases/download/v3.5.2/libffi-3.5.2.tar.gz",
-      "hash": "92af9efad4ba398995abf44835c5d9e9"
+      "hash": "92af9efad4ba398995abf44835c5d9e9",
+      "localPath": "./ignore/archives/libffi-3.5.2.tar.gz"
     },
     {
       "name": "Libpipeline (1.5.8)",
       "remote": "https://download.savannah.gnu.org/releases/libpipeline/libpipeline-1.5.8.tar.gz",
-      "hash": "17ac6969b2015386bcb5d278a08a40b5"
+      "hash": "17ac6969b2015386bcb5d278a08a40b5",
+      "localPath": "./ignore/archives/libpipeline-1.5.8.tar.gz"
     },
     {
       "name": "Libtool (2.5.4)",
       "remote": "https://ftp.gnu.org/gnu/libtool/libtool-2.5.4.tar.xz",
-      "hash": "22e0a29df8af5fdde276ea3a7d351d30"
+      "hash": "22e0a29df8af5fdde276ea3a7d351d30",
+      "localPath": "./ignore/archives/libtool-2.5.4.tar.xz"
     },
     {
       "name": "Libxcrypt (4.4.38)",
       "remote": "https://github.com/besser82/libxcrypt/releases/download/v4.4.38/libxcrypt-4.4.38.tar.xz",
-      "hash": "1796a5d20098e9dd9e3f576803c83000"
+      "hash": "1796a5d20098e9dd9e3f576803c83000",
+      "localPath": "./ignore/archives/libxcrypt-4.4.38.tar.xz"
     },
     {
       "name": "Linux (6.16.1)",
       "remote": "https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.16.1.tar.xz",
-      "hash": "32d45755e4b39d06e9be58f6817445ee"
+      "hash": "32d45755e4b39d06e9be58f6817445ee",
+      "localPath": "./ignore/archives/linux-6.16.1.tar.xz"
     },
     {
       "name": "Lz4 (1.10.0)",
       "remote": "https://github.com/lz4/lz4/releases/download/v1.10.0/lz4-1.10.0.tar.gz",
-      "hash": "dead9f5f1966d9ae56e1e32761e4e675"
+      "hash": "dead9f5f1966d9ae56e1e32761e4e675",
+      "localPath": "./ignore/archives/lz4-1.10.0.tar.gz"
     },
     {
       "name": "M4 (1.4.20)",
       "remote": "https://ftp.gnu.org/gnu/m4/m4-1.4.20.tar.xz",
-      "hash": "6eb2ebed5b24e74b6e890919331d2132"
+      "hash": "6eb2ebed5b24e74b6e890919331d2132",
+      "localPath": "./ignore/archives/m4-1.4.20.tar.xz"
     },
     {
       "name": "Make (4.4.1)",
       "remote": "https://ftp.gnu.org/gnu/make/make-4.4.1.tar.gz",
-      "hash": "c8469a3713cbbe04d955d4ae4be23eeb"
+      "hash": "c8469a3713cbbe04d955d4ae4be23eeb",
+      "localPath": "./ignore/archives/make-4.4.1.tar.gz"
     },
     {
       "name": "Man-DB (2.13.1)",
       "remote": "https://download.savannah.gnu.org/releases/man-db/man-db-2.13.1.tar.xz",
-      "hash": "b6335533cbeac3b24cd7be31fdee8c83"
+      "hash": "b6335533cbeac3b24cd7be31fdee8c83",
+      "localPath": "./ignore/archives/man-db-2.13.1.tar.xz"
     },
     {
       "name": "Man-pages (6.15)",
       "remote": "https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.15.tar.xz",
-      "hash": "16f68d70139dd2bbcae4102be4705753"
+      "hash": "16f68d70139dd2bbcae4102be4705753",
+      "localPath": "./ignore/archives/man-pages-6.15.tar.xz"
     },
     {
       "name": "MarkupSafe (3.0.2)",
       "remote": "https://pypi.org/packages/source/M/MarkupSafe/markupsafe-3.0.2.tar.gz",
-      "hash": "cb0071711b573b155cc8f86e1de72167"
+      "hash": "cb0071711b573b155cc8f86e1de72167",
+      "localPath": "./ignore/archives/markupsafe-3.0.2.tar.gz"
     },
     {
       "name": "Meson (1.8.3)",
       "remote": "https://github.com/mesonbuild/meson/releases/download/1.8.3/meson-1.8.3.tar.gz",
-      "hash": "08221d2f515e759686f666ff6409a903"
+      "hash": "08221d2f515e759686f666ff6409a903",
+      "localPath": "./ignore/archives/meson-1.8.3.tar.gz"
     },
     {
       "name": "MPC (1.3.1)",
       "remote": "https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz",
-      "hash": "5c9bc658c9fd0f940e8e3e0f09530c62"
+      "hash": "5c9bc658c9fd0f940e8e3e0f09530c62",
+      "localPath": "./ignore/archives/mpc-1.3.1.tar.gz"
     },
     {
       "name": "MPFR (4.2.2)",
       "remote": "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.2.tar.xz",
-      "hash": "7c32c39b8b6e3ae85f25156228156061"
+      "hash": "7c32c39b8b6e3ae85f25156228156061",
+      "localPath": "./ignore/archives/mpfr-4.2.2.tar.xz"
     },
     {
       "name": "Ncurses (6.5-20250809)",
       "remote": "https://invisible-mirror.net/archives/ncurses/current/ncurses-6.5-20250809.tgz",
-      "hash": "679987405412f970561cc85e1e6428a2"
+      "hash": "679987405412f970561cc85e1e6428a2",
+      "localPath": "./ignore/archives/ncurses-6.5-20250809.tgz"
     },
     {
       "name": "Ninja (1.13.1)",
       "remote": "https://github.com/ninja-build/ninja/archive/v1.13.1/ninja-1.13.1.tar.gz",
-      "hash": "c35f8f55f4cf60f1a916068d8f45a0f8"
+      "hash": "c35f8f55f4cf60f1a916068d8f45a0f8",
+      "localPath": "./ignore/archives/ninja-1.13.1.tar.gz"
     },
     {
       "name": "OpenSSL (3.5.2)",
       "remote": "https://github.com/openssl/openssl/releases/download/openssl-3.5.2/openssl-3.5.2.tar.gz",
-      "hash": "890fc59f86fc21b5e4d1c031a698dbde"
+      "hash": "890fc59f86fc21b5e4d1c031a698dbde",
+      "localPath": "./ignore/archives/openssl-3.5.2.tar.gz"
     },
     {
       "name": "Packaging (25.0)",
       "remote": "https://files.pythonhosted.org/packages/source/p/packaging/packaging-25.0.tar.gz",
-      "hash": "ab0ef21ddebe09d1803575120d3f99f8"
+      "hash": "ab0ef21ddebe09d1803575120d3f99f8",
+      "localPath": "./ignore/archives/packaging-25.0.tar.gz"
     },
     {
       "name": "Patch (2.8)",
       "remote": "https://ftp.gnu.org/gnu/patch/patch-2.8.tar.xz",
-      "hash": "149327a021d41c8f88d034eab41c039f"
+      "hash": "149327a021d41c8f88d034eab41c039f",
+      "localPath": "./ignore/archives/patch-2.8.tar.xz"
     },
     {
       "name": "Pcre2 (10.45)",
       "remote": "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2",
-      "hash": "f71abbe1b5adf25cd9af5d26ef223b66"
+      "hash": "f71abbe1b5adf25cd9af5d26ef223b66",
+      "localPath": "./ignore/archives/pcre2-10.45.tar.bz2"
     },
     {
       "name": "Perl (5.42.0)",
       "remote": "https://www.cpan.org/src/5.0/perl-5.42.0.tar.xz",
-      "hash": "7a6950a9f12d01eb96a9d2ed2f4e0072"
+      "hash": "7a6950a9f12d01eb96a9d2ed2f4e0072",
+      "localPath": "./ignore/archives/perl-5.42.0.tar.xz"
     },
     {
       "name": "Pkgconf (2.5.1)",
       "remote": "https://distfiles.ariadne.space/pkgconf/pkgconf-2.5.1.tar.xz",
-      "hash": "3291128c917fdb8fccd8c9e7784b643b"
+      "hash": "3291128c917fdb8fccd8c9e7784b643b",
+      "localPath": "./ignore/archives/pkgconf-2.5.1.tar.xz"
     },
     {
       "name": "Procps (4.0.5)",
       "remote": "https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-4.0.5.tar.xz",
-      "hash": "90803e64f51f192f3325d25c3335d057"
+      "hash": "90803e64f51f192f3325d25c3335d057",
+      "localPath": "./ignore/archives/procps-ng-4.0.5.tar.xz"
     },
     {
       "name": "Psmisc (23.7)",
       "remote": "https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-23.7.tar.xz",
-      "hash": "53eae841735189a896d614cba440eb10"
+      "hash": "53eae841735189a896d614cba440eb10",
+      "localPath": "./ignore/archives/psmisc-23.7.tar.xz"
     },
     {
       "name": "Python (3.13.7)",
       "remote": "https://www.python.org/ftp/python/3.13.7/Python-3.13.7.tar.xz",
-      "hash": "256cdb3bbf45cdce7499e52ba6c36ea3"
+      "hash": "256cdb3bbf45cdce7499e52ba6c36ea3",
+      "localPath": "./ignore/archives/Python-3.13.7.tar.xz"
     },
     {
       "name": "Python Documentation (3.13.7)",
       "remote": "https://www.python.org/ftp/python/doc/3.13.7/python-3.13.7-docs-html.tar.bz2",
-      "hash": "b84c0d81b2758398bb7f5b7411d3d908"
+      "hash": "b84c0d81b2758398bb7f5b7411d3d908",
+      "localPath": "./ignore/archives/python-3.13.7-docs-html.tar.bz2"
     },
     {
       "name": "Readline (8.3)",
       "remote": "https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz",
-      "hash": "25a73bfb2a3ad7146c5e9d4408d9f6cd"
+      "hash": "25a73bfb2a3ad7146c5e9d4408d9f6cd",
+      "localPath": "./ignore/archives/readline-8.3.tar.gz"
     },
     {
       "name": "Sed (4.9)",
       "remote": "https://ftp.gnu.org/gnu/sed/sed-4.9.tar.xz",
-      "hash": "6aac9b2dbafcd5b7a67a8a9bcb8036c3"
+      "hash": "6aac9b2dbafcd5b7a67a8a9bcb8036c3",
+      "localPath": "./ignore/archives/sed-4.9.tar.xz"
     },
     {
       "name": "Setuptools (80.9.0)",
       "remote": "https://pypi.org/packages/source/s/setuptools/setuptools-80.9.0.tar.gz",
-      "hash": "82e1d67883b713f9493659b50d13b436"
+      "hash": "82e1d67883b713f9493659b50d13b436",
+      "localPath": "./ignore/archives/setuptools-80.9.0.tar.gz"
     },
     {
       "name": "Shadow (4.18.0)",
       "remote": "https://github.com/shadow-maint/shadow/releases/download/4.18.0/shadow-4.18.0.tar.xz",
-      "hash": "30ef46f54363db1d624587be68794ef2"
+      "hash": "30ef46f54363db1d624587be68794ef2",
+      "localPath": "./ignore/archives/shadow-4.18.0.tar.xz"
     },
     {
       "name": "Sqlite (3500400)",
       "remote": "https://sqlite.org/2025/sqlite-autoconf-3500400.tar.gz",
-      "hash": "d74bbdca4ab1b2bd46d3b3f8dbb0f3db"
+      "hash": "d74bbdca4ab1b2bd46d3b3f8dbb0f3db",
+      "localPath": "./ignore/archives/sqlite-autoconf-3500400.tar.gz"
     },
     {
       "name": "Sqlite Documentation (3500400)",
       "remote": "https://anduin.linuxfromscratch.org/LFS/sqlite-doc-3500400.tar.xz",
-      "hash": "63a62af5b35913459954e6e66876f2b8"
+      "hash": "63a62af5b35913459954e6e66876f2b8",
+      "localPath": "./ignore/archives/sqlite-doc-3500400.tar.xz"
     },
     {
       "name": "Sysklogd (2.7.2)",
       "remote": "https://github.com/troglobit/sysklogd/releases/download/v2.7.2/sysklogd-2.7.2.tar.gz",
-      "hash": "af60786956a2dc84054fbf46652e515e"
+      "hash": "af60786956a2dc84054fbf46652e515e",
+      "localPath": "./ignore/archives/sysklogd-2.7.2.tar.gz"
     },
     {
       "name": "Systemd (257.8)",
       "remote": "https://github.com/systemd/systemd/archive/v257.8/systemd-257.8.tar.gz",
-      "hash": "25fe5d328e22641254761f1baa74cee0"
+      "hash": "25fe5d328e22641254761f1baa74cee0",
+      "localPath": "./ignore/archives/systemd-257.8.tar.gz"
     },
     {
       "name": "Systemd Man Pages (257.8)",
       "remote": "https://anduin.linuxfromscratch.org/LFS/systemd-man-pages-257.8.tar.xz",
-      "hash": "a44063e2ec0cf4adfd2ed5c9e9e095c5"
+      "hash": "a44063e2ec0cf4adfd2ed5c9e9e095c5",
+      "localPath": "./ignore/archives/systemd-man-pages-257.8.tar.xz"
     },
     {
       "name": "SysVinit (3.14)",
       "remote": "https://github.com/slicer69/sysvinit/releases/download/3.14/sysvinit-3.14.tar.xz",
-      "hash": "bc6890b975d19dc9db42d0c7364dd092"
+      "hash": "bc6890b975d19dc9db42d0c7364dd092",
+      "localPath": "./ignore/archives/sysvinit-3.14.tar.xz"
     },
     {
       "name": "Tar (1.35)",
       "remote": "https://ftp.gnu.org/gnu/tar/tar-1.35.tar.xz",
-      "hash": "a2d8042658cfd8ea939e6d911eaf4152"
+      "hash": "a2d8042658cfd8ea939e6d911eaf4152",
+      "localPath": "./ignore/archives/tar-1.35.tar.xz"
     },
     {
       "name": "Tcl (8.6.16)",
       "remote": "https://downloads.sourceforge.net/tcl/tcl8.6.16-src.tar.gz",
-      "hash": "eaef5d0a27239fb840f04af8ec608242"
+      "hash": "eaef5d0a27239fb840f04af8ec608242",
+      "localPath": "./ignore/archives/tcl8.6.16-src.tar.gz"
     },
     {
       "name": "Tcl Documentation (8.6.16)",
       "remote": "https://downloads.sourceforge.net/tcl/tcl8.6.16-html.tar.gz",
-      "hash": "750c221bcb6f8737a6791c1fbe98b684"
+      "hash": "750c221bcb6f8737a6791c1fbe98b684",
+      "localPath": "./ignore/archives/tcl8.6.16-html.tar.gz"
     },
     {
       "name": "Texinfo (7.2)",
       "remote": "https://ftp.gnu.org/gnu/texinfo/texinfo-7.2.tar.xz",
-      "hash": "11939a7624572814912a18e76c8d8972"
+      "hash": "11939a7624572814912a18e76c8d8972",
+      "localPath": "./ignore/archives/texinfo-7.2.tar.xz"
     },
     {
       "name": "Time Zone Data (2025b)",
       "remote": "https://www.iana.org/time-zones/repository/releases/tzdata2025b.tar.gz",
-      "hash": "ad65154c48c74a9b311fe84778c5434f"
+      "hash": "ad65154c48c74a9b311fe84778c5434f",
+      "localPath": "./ignore/archives/tzdata2025b.tar.gz"
     },
     {
       "name": "Udev-lfs Tarball (udev-lfs-20230818)",
       "remote": "https://anduin.linuxfromscratch.org/LFS/udev-lfs-20230818.tar.xz",
-      "hash": "acd4360d8a5c3ef320b9db88d275dae6"
+      "hash": "acd4360d8a5c3ef320b9db88d275dae6",
+      "localPath": "./ignore/archives/udev-lfs-20230818.tar.xz"
     },
     {
       "name": "Util-linux (2.41.1)",
       "remote": "https://www.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.1.tar.xz",
-      "hash": "7e5e68845e2f347cf96f5448165f1764"
+      "hash": "7e5e68845e2f347cf96f5448165f1764",
+      "localPath": "./ignore/archives/util-linux-2.41.1.tar.xz"
     },
     {
       "name": "Vim (9.1.1629)",
       "remote": "https://github.com/vim/vim/archive/v9.1.1629/vim-9.1.1629.tar.gz",
-      "hash": "4f856c3233c1c4570bc17572e4f9e8e4"
+      "hash": "4f856c3233c1c4570bc17572e4f9e8e4",
+      "localPath": "./ignore/archives/vim-9.1.1629.tar.gz"
     },
     {
       "name": "Wheel (0.46.1)",
       "remote": "https://pypi.org/packages/source/w/wheel/wheel-0.46.1.tar.gz",
-      "hash": "65e09ee84af36821e3b1e9564aa91bd5"
+      "hash": "65e09ee84af36821e3b1e9564aa91bd5",
+      "localPath": "./ignore/archives/wheel-0.46.1.tar.gz"
     },
     {
       "name": "XML::Parser (2.47)",
       "remote": "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz",
-      "hash": "89a8e82cfd2ad948b349c0a69c494463"
+      "hash": "89a8e82cfd2ad948b349c0a69c494463",
+      "localPath": "./ignore/archives/XML-Parser-2.47.tar.gz"
     },
     {
       "name": "Xz Utils (5.8.1)",
       "remote": "https://github.com//tukaani-project/xz/releases/download/v5.8.1/xz-5.8.1.tar.xz",
-      "hash": "cf5e1feb023d22c6bdaa30e84ef3abe3"
+      "hash": "cf5e1feb023d22c6bdaa30e84ef3abe3",
+      "localPath": "./ignore/archives/xz-5.8.1.tar.xz"
     },
     {
       "name": "Zlib (1.3.1)",
       "remote": "https://zlib.net/fossils/zlib-1.3.1.tar.gz",
-      "hash": "9855b6d802d7fe5b7bd5b196a2271655"
+      "hash": "9855b6d802d7fe5b7bd5b196a2271655",
+      "localPath": "./ignore/archives/zlib-1.3.1.tar.gz"
     },
     {
       "name": "Zstd (1.5.7)",
       "remote": "https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz",
-      "hash": "780fc1896922b1bc52a4e90980cdda48"
+      "hash": "780fc1896922b1bc52a4e90980cdda48",
+      "localPath": "./ignore/archives/zstd-1.5.7.tar.gz"
     }
   ]
 }

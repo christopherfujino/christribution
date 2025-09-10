@@ -94,11 +94,10 @@ func findDescriptionList(node *html.Node) []common.Archive {
 								if hash_opt == nil {
 									panic("Unreachable")
 								}
-								archives = append(archives, common.Archive{
-									Name:   name,
-									Remote: remote,
-									Hash:   *hash_opt,
-								})
+								archives = append(
+									archives,
+									common.CreateArchive(name, remote, *hash_opt),
+								)
 								name = "unreachable"
 								remote = "unreachable"
 								state = parsingName

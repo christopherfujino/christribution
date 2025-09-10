@@ -3,6 +3,7 @@ package common
 import (
 	"fmt"
 	"os"
+	"path"
 	"time"
 )
 
@@ -24,12 +25,22 @@ func EnsureDir(path string) {
 }
 
 type Manifest struct {
-	Date time.Time `json:"date"`
+	Date     time.Time `json:"date"`
 	Archives []Archive `json:"archives"`
 }
 
+func CreateArchive(name string, remote string, hash string) Archive {
+	return Archive{
+		Name:      name,
+		Remote:    remote,
+		Hash:      hash,
+		LocalPath: fmt.Sprintf("%s/%s", Archives, path.Base(remote)),
+	}
+}
+
 type Archive struct {
-	Name   string `json:"name"`
-	Remote string `json:"remote"`
-	Hash	 string `json:"hash"`
+	Name      string `json:"name"`
+	Remote    string `json:"remote"`
+	Hash      string `json:"hash"`
+	LocalPath string `json:"localPath"`
 }
