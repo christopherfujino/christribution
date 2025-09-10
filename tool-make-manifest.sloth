@@ -2,12 +2,12 @@
 
 let projectName = "go-bootstrapper"
 
-print("Hello, world!")
-
 with($cwd = "./${projectName}") {
-  "make manifest"
+  let run = func(subcommand) {
+    "./${projectName} ${subcommand}"!
+  }
   let result = "go build"!
-  print("GO BUILD: ${ result }")
-  result = "./${projectName} bootstrap"! -> "manifest.json"
-  print("bootstrap and write result: ${ result }")
+  run("bootstrap")
+  run("fetch")
+  run("extract")
 }

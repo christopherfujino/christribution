@@ -32,7 +32,7 @@ func Bootstrap() {
 	archives := findDescriptionList(rootNode)
 
 	jsonBytes, err := json.Marshal(common.Manifest{
-		Date: time.Now(),
+		Date:     time.Now(),
 		Archives: archives,
 	})
 	if err != nil {
@@ -56,7 +56,7 @@ type archiveParseState int
 
 const (
 	parsingName archiveParseState = iota
-	parsingRemote
+	parsingRemoteAndHash
 )
 
 func findDescriptionList(node *html.Node) []common.Archive {
@@ -68,22 +68,39 @@ func findDescriptionList(node *html.Node) []common.Archive {
 				if attr.Key == "class" && attr.Val == "variablelist" {
 					var state archiveParseState = parsingName
 					var name string
-					var remote_opt *string
+					var remote string
 					for node := range node.ChildNodes() {
 						switch state {
 						case parsingName:
 							var name_opt = findArchiveName(node.NextSibling)
 							if name_opt != nil {
 								name = *name_opt
-								state = parsingRemote
+								state = parsingRemoteAndHash
 							}
-						case parsingRemote:
-							remote_opt = findRemoteUrl(node)
+						case parsingRemoteAndHash:
+							var remote_opt = findTextFromLabel(
+								node,
+								"Download:",
+								findTextFromAnchor,
+							)
 							if remote_opt != nil {
+								remote = *remote_opt
+
+								var hash_opt = findTextFromLabel(
+									node,
+									"MD5 sum:",
+									findTextFromCode,
+								)
+								if hash_opt == nil {
+									panic("Unreachable")
+								}
 								archives = append(archives, common.Archive{
-									Name: name,
-									Remote: *remote_opt,
+									Name:   name,
+									Remote: remote,
+									Hash:   *hash_opt,
 								})
+								name = "unreachable"
+								remote = "unreachable"
 								state = parsingName
 							}
 						default:
@@ -126,14 +143,14 @@ func findArchiveName(node *html.Node) *string {
 	return nil
 }
 
-func findRemoteUrl(node *html.Node) *string {
+func findTextFromLabel(node *html.Node, label string, predicate func(*html.Node) *string) *string {
 	if node.Type == html.ElementNode && node.Data == "p" {
 		var string_opt *string
 		for child := range node.ChildNodes() {
 			if child.Type == html.TextNode {
 				var data = strings.TrimSpace(child.Data)
-				if data == "Download:" {
-					string_opt = findChildAnchor(node)
+				if data == label {
+					string_opt = predicate(node)
 					if string_opt == nil {
 						panic("Oops")
 					}
@@ -143,7 +160,7 @@ func findRemoteUrl(node *html.Node) *string {
 		}
 	} else {
 		for child := range node.ChildNodes() {
-			var string_opt = findRemoteUrl(child)
+			var string_opt = findTextFromLabel(child, label, predicate)
 			if string_opt != nil {
 				return string_opt
 			}
@@ -152,19 +169,39 @@ func findRemoteUrl(node *html.Node) *string {
 	return nil
 }
 
-func findChildAnchor(node *html.Node) *string {
-	fmt.Fprintf(os.Stderr, "Looking for an anchor in %s\n", node.Data)
+func findTextFromAnchor(node *html.Node) *string {
 	if node.Type == html.ElementNode && node.Data == "a" {
 		for _, attr := range node.Attr {
 			if attr.Key == "href" {
 				return &attr.Val
 			}
 		}
-		fmt.Fprintf(os.Stderr, "found anchor but it didn't have an href attribute.")
 	} else {
 		var string_opt *string
 		for child := range node.ChildNodes() {
-			string_opt = findChildAnchor(child)
+			string_opt = findTextFromAnchor(child)
+			if string_opt != nil {
+				return string_opt
+			}
+		}
+	}
+
+	return nil
+}
+
+func findTextFromCode(node *html.Node) *string {
+	if node.Type == html.ElementNode && node.Data == "code" {
+		for node := range node.ChildNodes() {
+			if node.Type == html.TextNode {
+				var returnValue = strings.TrimSpace(node.Data)
+				return &returnValue
+			}
+		}
+		panic("Unreachable")
+	} else {
+		var string_opt *string
+		for child := range node.ChildNodes() {
+			string_opt = findTextFromCode(child)
 			if string_opt != nil {
 				return string_opt
 			}

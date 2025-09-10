@@ -31,4 +31,5 @@ type Manifest struct {
 type Archive struct {
 	Name   string `json:"name"`
 	Remote string `json:"remote"`
+	Hash	 string `json:"hash"`
 }

@@ -13,7 +13,7 @@ import (
 func Fetch() {
 	_, err := os.Stat(common.Ignore)
 	if err != nil {
-		// Needs execute to access
+		// Needs execute permissions to access
 		os.Mkdir(common.Ignore, 0755)
 	}
 
@@ -22,28 +22,28 @@ func Fetch() {
 		os.Mkdir(common.Archives, 0755)
 	}
 
-	manifestBytes, err := os.ReadFile("./manifest.json")
+	manifestBytes, err := os.ReadFile(common.ManifestPath)
 	if err != nil {
 		panic(err)
 	}
-	var remotePaths []string
-	err = json.Unmarshal(manifestBytes, &remotePaths)
+	var manifest common.Manifest
+	err = json.Unmarshal(manifestBytes, &manifest)
 	if err != nil {
 		panic(err)
 	}
-	var remotes = remotesToFetch(remotePaths)
-	//fmt.Println(remotes)
+	var remotes = remotesToFetch(manifest.Archives)
+
 	download(remotes)
 }
 
-func remotesToFetch(remotePaths []string) [][]string {
+func remotesToFetch(archives []common.Archive) [][]string {
 	var remotes [][]string
 
-	for _, remotePath := range remotePaths {
-		var localPath = fmt.Sprintf("%s/%s", common.Ignore, path.Base(remotePath))
+	for _, archive := range archives {
+		var localPath = fmt.Sprintf("%s/%s", common.Ignore, path.Base(archive.Remote))
 		_, err := os.Stat(localPath)
 		if err != nil {
-			remotes = append(remotes, []string{remotePath, localPath})
+			remotes = append(remotes, []string{archive.Remote, localPath})
 		} else {
 			fmt.Printf("The file %s already exists, skipping fetch.\n", localPath)
 		}
