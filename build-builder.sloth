@@ -1,0 +1,9 @@
+#!/usr/bin/env sloth
+
+with($cwd = $scriptDir) {
+  [
+    "docker", "build", ".",
+    "--file", "./builder.Dockerfile",
+    "--tag", "christribution-builder",
+  ]!
+}

@@ -1,8 +1,8 @@
-#!/usr/bin/env sloth-unsafe
+#!/usr/bin/env sloth
 
 let projectName = "go-bootstrapper"
 
-with($cwd = "./${projectName}") {
+with($cwd = "${ $scriptDir }/${ projectName }") {
   let run = func(subcommand) {
     "./${projectName} ${subcommand}"!
   }
